@@ -39,11 +39,6 @@ On a different kind of machine, it pastes what fits and skips the rest.
 - Only changes access on blocks you own.
 - Can't reach someone else's private Tesseract: private frequencies are per owner.
 
-## How it works
-
-It pastes through the same calls Thermal Expansion's GUI makes (`setSide`, `setRedstoneConfig`,
-`setAccess`, `setTileInfo`), so the server treats a paste like clicking the buttons.
-
 ## Building
 
 `./build.sh` builds `build/TEConfigCopier-<version>.jar` with Java 8. It needs these jars in
