@@ -9,7 +9,7 @@ side colours on dozens of Pulverizers or Tesseracts.
 - **It only does what the GUI does.** Pasting makes the same calls as clicking the buttons in the
   machine's GUI, and the server applies its usual checks.
 
-Requires Thermal Expansion 3.0.0.6 and CoFH Core 2.0.0.5 (Forge 9.11.1.965).
+Requires Thermal Expansion 3.0.0.6.
 
 ## How to use
 
