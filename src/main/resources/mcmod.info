@@ -1,0 +1,13 @@
+[
+  {
+    "modid": "teconfigcopier",
+    "name": "TE Config Copier",
+    "description": "Copy a Thermal Expansion machine's sides, redstone mode, access and Tesseract frequency, and paste them onto another: hold paper: the copy key (C) copies, sneak + right-click pastes. Client side only.",
+    "version": "1.0.0",
+    "mcversion": "1.6.4",
+    "url": "",
+    "authors": ["landonracer109"],
+    "credits": "",
+    "dependencies": ["ThermalExpansion"]
+  }
+]
