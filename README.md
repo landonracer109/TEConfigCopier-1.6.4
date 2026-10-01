@@ -59,16 +59,6 @@ already has (they're sent to every client that can see the block) and pastes thr
 methods. The right-click that triggers a paste is cancelled on the client, so the server never
 sees it.
 
-## Testing so far
-
-On the TechIt-ng pack (Forge 9.11.1.965, Java 8), in single player and on a dedicated
-[Cauldron](https://github.com/MinecraftPortCentral/Cauldron) server (Cauldron-MCPC-Plus
-1.6.4-1.965.21.189) that didn't have the mod:
-- side configuration between machines facing different directions, and redstone mode;
-- Tesseract frequency, item, fluid and energy modes, and access; the pasted Tesseracts link;
-- pasting onto a different kind of machine;
-- the pasted settings are still there after rejoining, so the server applied them.
-
 ## Building
 
 `./build.sh` builds `build/TEConfigCopier-<version>.jar` with Java 8. It needs these jars in
