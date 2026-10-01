@@ -20,44 +20,29 @@ Hold a piece of **paper**:
 | **Copy** | look at a machine and press **C** |
 | **Paste** | **sneak + right-click** another machine |
 
-A chat message confirms each copy and paste, and says what was skipped. The copy key can be changed
-in *Options → Controls* ("Copy machine settings (with paper)"). The copied settings stay until you
-copy something else or quit the game.
-
-Copying uses a key, not a click, because Forge 1.6.4 only reports left-clicks on blocks to the
-server, where a client-side mod can't see them.
+Chat confirms each copy and paste. The copy key can be changed in *Options → Controls*.
 
 ## What's copied
 
 | Setting | Notes |
 |---|---|
-| **Side configuration** | Relative to the machine's front: "input on its left" stays on its left, whichever way the new machine faces. The front face itself can't be configured, as in the GUI. |
+| **Side configuration** | relative to the machine's front, so it fits machines facing any way |
 | **Redstone mode** | ignored / low / high |
-| **Access** | public / restricted / private. Only pasted onto blocks **you own**. |
+| **Access** | public / restricted / private |
 | **Tesseract** | frequency, and the item, fluid and energy modes |
 
-Pasting onto a different kind of machine (a Pulverizer's settings onto a Redstone Furnace, say)
-applies what fits and skips side settings the target doesn't have.
+On a different kind of machine, it pastes what fits and skips the rest.
 
-## Rules it follows
+## Rules
 
-- **It only copies blocks you could open.** A secured block you can't access can't be copied, so it
-  never shows you more than the GUI would.
-- **It only changes access on blocks you own**, as the GUI's security tab does.
-- **It can't be used to tap into someone else's private Tesseract.** Thermal Expansion keeps
-  frequencies per owner: a public Tesseract uses the shared public channels, a private or
-  restricted one its owner's own channels. Frequency 42 on someone's private Tesseract and
-  frequency 42 on yours are different channels, so there's nothing to gain from copying a frequency
-  anyway.
+- Only copies blocks you can open.
+- Only changes access on blocks you own.
+- Can't reach someone else's private Tesseract: private frequencies are per owner.
 
 ## How it works
 
-Thermal Expansion's GUI changes settings by calling methods on the client's copy of the machine,
-which then send the change to the server: `setSide`, `setRedstoneConfig`, `setAccess`, and for
-Tesseracts the mode buttons plus `setTileInfo`. TE Config Copier reads the settings the client
-already has (they're sent to every client that can see the block) and pastes through those same
-methods. The right-click that triggers a paste is cancelled on the client, so the server never
-sees it.
+It pastes through the same calls Thermal Expansion's GUI makes (`setSide`, `setRedstoneConfig`,
+`setAccess`, `setTileInfo`), so the server treats a paste like clicking the buttons.
 
 ## Building
 
